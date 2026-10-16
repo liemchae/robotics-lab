@@ -4,6 +4,8 @@
 
 **Portfolio project for:** Robotics Technical Program Manager (Tesla Optimus), AI Robotics Product Manager (Google), Principal Product Manager - Atlas Logistics (Boston Dynamics).
 
+**GitHub:** https://github.com/liemchae/robotics-lab
+
 ---
 
 ## Lab Equipment
@@ -15,25 +17,72 @@
 
 ---
 
-## Project Phases (90 Days)
+## Learning Structure (90 Days)
 
-### Phase 1: ROS2 Fundamentals + Simulation (Weeks 1-4)
-- [x] ROS2 environment setup
-- [ ] Unitree sensor integration (IMU, joint encoders)
-- [ ] Gazebo simulation environment
-- [ ] Sim-to-real latency analysis
+### Daily Learning Path (Mon-Fri, 1 hr/day)
 
-### Phase 2: Robot Control + Perception (Weeks 5-8)
-- [ ] Locomotion controller (walk, balance, gait patterns)
-- [ ] Vision pipeline (RGB-D sensor, obstacle detection)
-- [ ] Sim-to-real transfer (policy execution on hardware)
-- [ ] Performance benchmarking
+**No hardware required.** Theory + local simulation on your machine.
 
-### Phase 3: Learning Algorithms + Capstone (Weeks 9-12)
-- [ ] Imitation learning framework (PyTorch + Isaac Gym)
-- [ ] Policy training & evaluation
-- [ ] Program plan: "Humanoid Control Stack for Production"
-- [ ] Portfolio: code + demo video + documentation
+- **[DAILY_THEORY_PATH.md](docs/DAILY_THEORY_PATH.md)** — Complete 60-day curriculum
+  - Week 1-2: ROS2 fundamentals (pub/sub, nodes, messages)
+  - Week 3-4: Gazebo simulation (URDF, physics)
+  - Week 5-8: Control systems (kinematics, walking)
+  - Week 9-10: Machine learning (imitation learning)
+  - Week 11-12: Capstone (program plan)
+  
+**Daily commits:** Show consistency + progress on GitHub
+
+### Biweekly Lab Checkpoints (Every 2 weeks, 2 hrs/session)
+
+**Hardware validation only.** Offline learning feeds into checkpoint milestones.
+
+- **[BIWEEKLY_CHECKPOINTS.md](docs/BIWEEKLY_CHECKPOINTS.md)** — 6 lab sessions
+  - CP1 (Week 2): Sensor integration validation
+  - CP2 (Week 4): Sim-to-real latency analysis
+  - CP3 (Week 6): Walk controller on hardware
+  - CP4 (Week 8): Vision + arm control
+  - CP5 (Week 10): Learned policy deployment
+  - CP6 (Week 12): Demo video + capstone
+  
+**Checkpoint commits:** Prove real robot progress
+
+---
+
+## Quick Start
+
+### 1. Daily Learning (Start Monday)
+
+```bash
+cd /Users/LCHAEHY/argus_agent/Work/robotics-lab
+
+# Read today's task
+cat docs/DAILY_THEORY_PATH.md | grep "^### MON"
+
+# (Follow instructions: read, code, test, commit)
+```
+
+### 2. First Lab Visit (Week 2 Weekend)
+
+```bash
+# Pre-lab: Prepare checklist (30 min from home)
+cat docs/BIWEEKLY_CHECKPOINTS.md | grep "Pre-Lab Checklist" -A 5
+
+# In lab: Execute checkpoint (2 hrs)
+cat docs/BIWEEKLY_CHECKPOINTS.md | grep "^## CHECKPOINT 1" -A 50
+```
+
+### 3. GitHub Tracking
+
+```bash
+# After each daily session
+git add .
+git commit -m "day<N>(theory|impl|analysis): [specific learning]"
+git push
+
+# After each lab checkpoint
+git commit -m "checkpoint(N): [focus area]"
+git push
+```
 
 ---
 
@@ -41,114 +90,121 @@
 
 ```
 robotics-lab/
-├─ ros2_ws/              # ROS2 workspace
-│  ├─ src/
-│  │  ├─ unitree_control/      # Unitree walking, balance
-│  │  ├─ perception_pipeline/  # Vision + sensor fusion
-│  │  └─ shared_msgs/          # Custom ROS messages
-│  ├─ build/
-│  ├─ install/
-│  └─ README.md
+├─ docs/
+│  ├─ DAILY_THEORY_PATH.md           # Mon-Fri learning (no hardware)
+│  ├─ BIWEEKLY_CHECKPOINTS.md        # Lab validation milestones
+│  ├─ ROS2_SETUP.md                  # Environment setup
+│  ├─ UNITREE_API.md                 # Hardware reference
+│  ├─ PROGRESS.md                    # Track completions
+│  └─ LEARNINGS.md                   # Document insights
 │
-├─ sim/                   # Simulation environments
-│  ├─ isaac_env/         # Isaac Gym training
-│  ├─ gazebo_models/     # URDF + SDF models
-│  └─ README.md
+├─ ros2_ws/                          # ROS2 workspace
+│  └─ src/
+│     └─ unitree_control/            # Main package
+│        ├─ unitree_control/
+│        │  ├─ sensor_reader.py
+│        │  ├─ simple_publisher.py
+│        │  └─ sensor_subscriber.py
+│        ├─ msg/                     # Custom messages
+│        ├─ config/                  # Parameters
+│        └─ launch/                  # Launch files
 │
-├─ learning/             # ML algorithms
+├─ sim/                              # Simulation (Weeks 3-4+)
+│  ├─ isaac_env/
+│  └─ gazebo_models/
+│
+├─ learning/                         # ML code (Weeks 9-10)
 │  ├─ imitation_learning/
-│  ├─ checkpoints/       # Trained policies
-│  └─ README.md
+│  └─ checkpoints/
 │
-├─ docs/                 # Documentation
-│  ├─ ROS2_SETUP.md
-│  ├─ UNITREE_API.md
-│  ├─ CAPSTONE_PLAN.md
-│  ├─ LEARNINGS.md
-│  └─ WEEKLY_LOG.md
+├─ data/                             # Hardware data (lab-generated)
+│  └─ .gitignore                     # Exclude large rosbags
 │
-└─ README.md (this file)
+├─ README.md                         # This file
+├─ START_HERE.md                     # Quickstart guide
+└─ GITHUB_SETUP.md                   # Pushing to GitHub
 ```
 
 ---
 
-## Quick Start
+## Progress Tracking
 
-### Prerequisites
-- Ubuntu 22.04 (lab machine with RTX5090)
-- Docker (optional, recommended)
-- Git
+**Daily Progress:** See [PROGRESS.md](docs/PROGRESS.md)
 
-### Setup (Week 1)
+| Phase | Week | Daily Tasks | Lab Checkpoint |
+|-------|------|-------------|-----------------|
+| **ROS2** | 1-2 | Concepts, pub/sub, messages | CP1: Sensor validation |
+| **Simulation** | 3-4 | URDF, Gazebo, physics | CP2: Sim-to-real latency |
+| **Control** | 5-6 | Kinematics, PID, walking | CP3: Walk controller |
+| **Perception** | 7-8 | Vision, arm control | CP4: Vision + arm |
+| **Learning** | 9-10 | Imitation learning, training | CP5: Learned policy |
+| **Capstone** | 11-12 | Program plan, portfolio | CP6: Demo + validation |
 
-```bash
-# Clone & navigate
-git clone <this-repo>
-cd robotics-lab
+---
 
-# Follow ROS2 setup guide
-cat docs/ROS2_SETUP.md
+## Application Timeline
 
-# Build workspace
-cd ros2_ws
-colcon build --symlink-install
-source install/setup.bash
+- **Week 4:** Apply to Tesla/Google/Boston Dynamics (Phase 1 complete)
+  - Include: GitHub link + DAILY_THEORY_PATH progress
+  
+- **Week 8:** Re-apply with hardware deployments (Phase 2 complete)
+  - Include: CP1-CP3 results + latency analysis
+  
+- **Week 12:** Final push with capstone + demo (Phase 3 complete)
+  - Include: GitHub (60+ commits), demo video, program plan
 
-# Verify installation
-ros2 topic list
-```
+---
 
-### First Milestone: Read Unitree Sensors
-```bash
-cd ros2_ws/src/unitree_control
-# Implementation in Week 1-2, see docs/UNITREE_API.md
-```
+## Documentation
+
+- **[START_HERE.md](START_HERE.md)** — 90-day overview + checklist
+- **[DAILY_THEORY_PATH.md](docs/DAILY_THEORY_PATH.md)** — Day-by-day curriculum
+- **[BIWEEKLY_CHECKPOINTS.md](docs/BIWEEKLY_CHECKPOINTS.md)** — Lab sessions
+- **[ROS2_SETUP.md](docs/ROS2_SETUP.md)** — Environment installation
+- **[UNITREE_API.md](docs/UNITREE_API.md)** — Hardware reference
+- **[PROGRESS.md](docs/PROGRESS.md)** — Track completion
+- **[LEARNINGS.md](docs/LEARNINGS.md)** — Document insights
 
 ---
 
 ## Key Resources
 
 - [ROS2 Humble Docs](https://docs.ros.org/en/humble/)
-- [Unitree Go2 SDK](https://github.com/unitreerobotics/unitree_sdk2)
-- [Isaac Gym Docs](https://docs.nvidia.com/isaac/isaac_gym/)
-- [MuJoCo Docs](https://mujoco.readthedocs.io/)
+- [Unitree Robotics](https://github.com/unitreerobotics)
+- [Isaac Gym](https://docs.nvidia.com/isaac/isaac_gym/)
+- [Gazebo](https://gazebosim.org/)
 
 ---
 
-## Documentation
+## Commit History
 
-- **[ROS2_SETUP.md](docs/ROS2_SETUP.md)** — Installation & environment
-- **[UNITREE_API.md](docs/UNITREE_API.md)** — Sensor + actuator interfaces
-- **[SIMULATION.md](docs/SIMULATION.md)** — Gazebo + Isaac Gym setup
-- **[LEARNINGS.md](docs/LEARNINGS.md)** — Weekly insights & blockers
-- **[CAPSTONE_PLAN.md](docs/CAPSTONE_PLAN.md)** — Final program plan
+Example of expected GitHub history:
 
----
+```
+day1(theory): ROS2 architecture + local setup
+day2(theory): Pub/sub message passing verified
+day3(theory): Workspace + build system
+day4(impl): First custom ROS2 publisher
+day5(impl): Custom message types + subscriber
+checkpoint(1): ROS2 sensor integration validated
 
-## Weekly Progress
+day6(theory): URDF + Gazebo basics
+day7(theory): Gazebo simulation environment
+...
+checkpoint(2): Sim-to-real latency analysis
 
-See **[WEEKLY_LOG.md](docs/WEEKLY_LOG.md)** for detailed week-by-week updates, experiments, and results.
+...
 
----
+checkpoint(6): Final demo video + capstone
+```
 
-## Application Portfolio
-
-This repo demonstrates:
-1. **Hands-on robotics:** Real robot control, sim-to-real transfer, sensor integration
-2. **Software engineering:** Clean ROS2 architecture, reproducible builds, documentation
-3. **Systems thinking:** Understanding hardware constraints, manufacturing readiness, cross-functional dependencies
-4. **Technical depth:** Perception, control algorithms, training pipelines
-
-**Use in job applications:**
-- Link to GitHub repo
-- Highlight capstone program plan
-- Share demo video (real Unitree executing learned behavior)
+60+ commits over 12 weeks = **visible, consistent learning arc**.
 
 ---
 
 ## Author
 
-Chaehyuen Liem  
+**Chaehyuen Liem**  
 Product Manager, Speech & Navigation @ Mercedes-Benz  
 Pursuing: Robotics PM roles (Tesla Optimus, Google, Boston Dynamics)
 
@@ -156,5 +212,5 @@ Pursuing: Robotics PM roles (Tesla Optimus, Google, Boston Dynamics)
 
 ## License
 
-MIT (for reusability)
+MIT (for educational reuse)
 
