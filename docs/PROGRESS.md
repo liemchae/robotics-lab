@@ -1,27 +1,19 @@
-# Daily Progress Log
+# Progress Log
 
-Track actual execution against planned milestones.
+## Week 1-2: ROS2 Fundamentals
 
----
+### Day 1 (Friday, Oct 16)
+- [x] Read ROS2 concepts (pub/sub, nodes, middleware)
+- [x] Local ROS2 install (Docker or native)
+- [x] Verified ros2 --version
+- [x] Setup bashrc auto-sourcing
 
-## Week 1-2 Status
+Time: 60 minutes ✓
 
-**Target:** 10 hours of ROS2 + Unitree integration  
-**Start Date:** 2026-10-16  
-**Plan:** [WEEK1_DAILY_BREAKDOWN.md](WEEK1_DAILY_BREAKDOWN.md)
+Key Learnings:
+- Pub/sub decoupling enables scalable robot systems
+- ROS2 = middleware (not language/OS bound)
+- Topics = asynchronous message channels
+- Nodes = independent executable processes
 
-### Days Completed
-
-- [ ] Day 1: ROS2 installation
-- [ ] Day 2: talker/listener demo
-- [ ] Day 3: Workspace setup
-- [ ] Day 4: Nodes/topics/services
-- [ ] Day 5: Custom messages
-- [ ] Day 6: Publisher/subscriber
-- [ ] Day 7: Real Unitree connection
-- [ ] Days 8-14: Gazebo + sim-to-real
-
-### Summary
-
-*Updates daily after each session.*
-
+Next: Day 2 - Talker/listener demo (message passing)
