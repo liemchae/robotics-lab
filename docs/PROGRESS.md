@@ -85,3 +85,33 @@ Total Friday: 60 min across 4 sessions
 Weekend break. Resume Monday.
 
 Next: Day 5 - Custom message types + subscriber
+
+### Day 5 (Friday, Oct 16)
+- [x] Created my_messages package with SensorReading.msg
+- [x] Custom message: timestamp, sensor_name, value, confidence
+- [x] Created SensorSubscriber node
+- [x] Modified SensorPublisher to send SensorReading
+- [x] Verified full pipeline: publisher -> /sensor/reading -> subscriber
+
+Time: 60 minutes (total Friday across all sessions) ✓
+
+Key Learnings:
+- rosidl_default_generators auto-generates Python bindings from .msg
+- Custom message types enforce data contracts
+- Typed messages = safer, self-documenting interfaces
+- Publisher and subscriber share message type, not code
+
+Key Insight:
+- Custom messages are the API contract of robot systems
+- Decoupling maintained even with complex data types
+
+## Week 1-2 ROS2 Fundamentals: COMPLETE
+
+Days 1-5 summary:
+- Day 1: Concepts + architecture
+- Day 2: Pub/sub demo
+- Day 3: Build system + workspace
+- Day 4: Custom Python node
+- Day 5: Custom message types + full pipeline
+
+Next week: Gazebo URDF + simulation, sim latency analysis
