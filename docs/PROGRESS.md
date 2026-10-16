@@ -115,3 +115,29 @@ Days 1-5 summary:
 - Day 5: Custom message types + full pipeline
 
 Next week: Gazebo URDF + simulation, sim latency analysis
+
+## Week 3-4: Simulation + URDF
+
+### Day 6 (Friday, Oct 16)
+- [x] Created simple_quadruped.urdf (base + 4 legs, 8 joints)
+- [x] Joint limits: hip +/-0.5 rad, calf -1.0 to +0.5 rad
+- [x] Inertial properties (mass, moment of inertia)
+- [x] Verified URDF structure via command line
+
+Time: 30 minutes ✓
+
+Key Learnings:
+- URDF = XML describing robot structure
+- Links = rigid bodies (inertial, visual, collision)
+- Joints = connections (type, limits, axis)
+- Geometry = cylinder, box, mesh
+- Inertia = physics simulation accuracy
+- 1 base + 4 legs = 9 links, 8 joints (hip + calf per leg)
+
+Key Insight:
+- URDF is the single source of truth for robot geometry
+- Same model used for visualization, simulation, and control
+
+Total Friday (Days 1-6): ~100 min
+
+Next: Day 7 - Gazebo physics simulation
