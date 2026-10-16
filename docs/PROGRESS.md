@@ -61,3 +61,27 @@ Key Insight:
 - Source once per session: source install/setup.bash
 
 Next: Day 4 - Custom Python node (publisher)
+
+### Day 4 (Friday, Oct 16)
+- [x] Created my_sensor_node package (ros2 pkg create)
+- [x] Wrote SensorPublisher: Float32 on /sensor/distance
+- [x] Registered entry point in setup.py
+- [x] Built, ran, verified sinusoidal output
+
+Time: 25 minutes ✓
+
+Key Learnings:
+- Node class inherits from rclpy.Node
+- create_publisher(MsgType, topic, queue_size)
+- create_timer(period, callback) for periodic execution
+- setup.py console_scripts registers the executable
+- colcon build --packages-select for single package rebuild
+
+Key Insight:
+- Entry point registration is the link between code and ros2 run
+- Timer callbacks = the heartbeat of sensor nodes
+
+Total Friday: 60 min across 4 sessions
+Weekend break. Resume Monday.
+
+Next: Day 5 - Custom message types + subscriber
