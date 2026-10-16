@@ -1,0 +1,43 @@
+# Build artifacts
+build/
+install/
+devel/
+*.o
+*.a
+*.so
+*.pyc
+
+# ROS2
+log/
+*.log
+
+# Python
+__pycache__/
+*.egg-info/
+dist/
+.venv/
+venv/
+
+# Simulation
+*.xml.d
+*.sdf~
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data (large files)
+*.rosbag
+*.bag
+checkpoints/*.pth
+checkpoints/*.pt
+
+# Experimental
+experiments/
+scratch/

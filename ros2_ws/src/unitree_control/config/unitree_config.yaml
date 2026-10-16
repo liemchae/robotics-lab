@@ -1,0 +1,35 @@
+# Unitree Humanoid Configuration
+
+unitree:
+  model: "H1"  # or "Go2"
+  
+  sensors:
+    imu:
+      publish_rate: 50  # Hz
+      frame_id: "base_link"
+    
+    joint_state:
+      publish_rate: 50  # Hz
+      frame_id: "base_link"
+    
+    foot_force:
+      publish_rate: 50  # Hz
+  
+  battery:
+    publish_rate: 10  # Hz
+    min_voltage: 22.0
+    max_voltage: 33.0
+
+control:
+  max_linear_velocity: 2.0  # m/s
+  max_angular_velocity: 1.57  # rad/s
+  base_height: 0.5  # meters (approximate)
+
+hardware:
+  port: "/dev/ttyUSB0"
+  baudrate: 115200
+  timeout: 1.0  # seconds
+
+logging:
+  level: "INFO"
+  save_to_file: false
