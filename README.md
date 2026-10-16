@@ -205,8 +205,7 @@ checkpoint(6): Final demo video + capstone
 ## Author
 
 **Chaehyuen Liem**  
-Product Manager, Speech & Navigation @ Mercedes-Benz  
-Pursuing: Robotics PM roles (Tesla Optimus, Google, Boston Dynamics)
+Product Manager, Speech & Navigation @ Mercedes-Benz
 
 ---
 
