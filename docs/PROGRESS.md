@@ -39,3 +39,25 @@ Key Insight:
 - Ready for distributed robot architecture
 
 Next: Day 3 - Write custom publisher node (Python)
+
+### Day 3 (Friday, Oct 16)
+- [x] Created ~/ros2_ws_learning workspace
+- [x] Ran colcon build --symlink-install
+- [x] Verified build/, install/, log/ directories created
+- [x] ros2 pkg list shows 20+ packages from workspace
+
+Time: 25 minutes ✓
+
+Key Learnings:
+- colcon = ROS2 build orchestrator (CMake wrapper)
+- package.xml = metadata (name, deps, description)
+- CMakeLists.txt or setup.py = build instructions
+- symlink-install = dev mode (code changes auto-reflect)
+- install/setup.bash = sourcing adds packages to PATH
+- Multiple packages in one workspace build independently
+
+Key Insight:
+- Modular package structure enables distributed development
+- Source once per session: source install/setup.bash
+
+Next: Day 4 - Custom Python node (publisher)
