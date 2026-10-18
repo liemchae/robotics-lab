@@ -141,3 +141,33 @@ Key Insight:
 Total Friday (Days 1-6): ~100 min
 
 Next: Day 7 - Gazebo physics simulation
+
+### Day 7 (Saturday, Oct 18)
+- [x] Created simple.world (Bullet engine, 1kHz, gravity 9.81)
+- [x] Setup model directory (~/.gazebo/models/simple_quadruped/)
+- [x] Spawned quadruped 0.5m above ground plane
+- [x] Verified gravity, collision, physics convergence
+
+Time: 30 minutes ✓
+
+Key Learnings:
+- Gazebo = physics simulator (not just visualization)
+- Bullet engine accurate for legged robots
+- 1kHz timestep = good balance (fast enough, stable)
+- Model directory: ~/.gazebo/models/ (standard location)
+- gz topic -l shows all simulation data streams
+- Wrench topics = real force/torque on each link
+
+Key Insight:
+- Simulation proves physics before touching real hardware
+- Same URDF used for visualization and physics
+
+## Week 1-2: COMPLETE
+
+Days 1-7 summary:
+- Days 1-3: ROS2 concepts, pub/sub, build system
+- Days 4-5: Custom nodes, message types, full pipeline
+- Days 6-7: URDF model, Gazebo physics simulation
+
+Next: Days 8-10 (simulate motion, analyze latency)
+Biweekly CP1 (Oct 26): Real Unitree sensor validation
