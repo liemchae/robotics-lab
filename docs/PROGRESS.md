@@ -212,3 +212,31 @@ Key Insight:
 - Same bag replays identically every time
 
 Next: Day 10 - Playback rosbag, analyze latency
+
+### Day 10 (Sunday, Oct 19)
+- [x] Played back rosbag with --loop
+- [x] Measured publish rate: 20 Hz (50 ms interval)
+- [x] Measured latency: <5 ms (localhost simulation)
+- [x] Estimated real hardware latency: 15-20 ms (Unitree WiFi)
+
+Time: 20 minutes ✓
+
+Key Learnings:
+- Sim latency <5 ms, jitter <1 ms (ideal conditions)
+- Real hardware expected: 15-20 ms, jitter +/-5 ms
+- Bottleneck: wireless communication, not computation
+- 15 ms gap acceptable for 2s gait cycle (0.5 Hz)
+
+Key Insight:
+- Sim-to-real gap is measurable and manageable
+- Real robot walking feasible with current latency budget
+
+## Week 1-2 Theory + Simulation: COMPLETE
+
+Days 1-10 summary (225 min total):
+- Days 1-3: ROS2 concepts, pub/sub, build system
+- Days 4-5: Custom nodes, message types, full pipeline
+- Days 6-7: URDF model, Gazebo physics simulation
+- Days 8-10: Motion control, rosbag recording, latency analysis
+
+Next: Biweekly Checkpoint 1 (Oct 26) - Real Unitree sensor validation
