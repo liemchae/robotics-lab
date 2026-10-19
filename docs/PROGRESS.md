@@ -171,3 +171,25 @@ Days 1-7 summary:
 
 Next: Days 8-10 (simulate motion, analyze latency)
 Biweekly CP1 (Oct 26): Real Unitree sensor validation
+
+## Week 3-4: Motion + Latency Analysis
+
+### Day 8 (Sunday, Oct 19)
+- [x] Created GazeboController node (JointTrajectory publisher)
+- [x] 8 joints: hip + calf per leg, sinusoidal motion
+- [x] Trotting gait: diagonal pairs in opposite phase
+- [x] Verified message publishing at 10 Hz
+
+Time: 20 minutes ✓
+
+Key Learnings:
+- JointTrajectory = standard ROS2 message for joint commands
+- Trotting gait: diagonal legs move together (FL+RR, FR+RL)
+- Hip amplitude 0.2 rad, calf 0.3 rad at 1 Hz
+- setup.py entry point required for each new executable
+
+Key Insight:
+- Gait patterns = math (sine waves with phase offsets)
+- Same controller works in simulation and real hardware
+
+Next: Day 9 - Record rosbag, analyze latency
