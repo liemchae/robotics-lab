@@ -193,3 +193,22 @@ Key Insight:
 - Same controller works in simulation and real hardware
 
 Next: Day 9 - Record rosbag, analyze latency
+
+### Day 9 (Sunday, Oct 19)
+- [x] Created WalkController (refined gait: 0.5 Hz, smaller amplitudes)
+- [x] Added velocity command publisher (0.2 m/s forward)
+- [x] Recorded day9_walk_motion.bag (30 seconds, 7-8 gait cycles)
+
+Time: 20 minutes ✓
+
+Key Learnings:
+- Slower gait (0.5 Hz vs 1 Hz) = more stable motion
+- Smaller amplitudes reduce jitter (hip 0.15, calf 0.25)
+- rosbag record captures timestamped message streams
+- Bag files enable offline analysis and replay
+
+Key Insight:
+- Record first, analyze later = reproducible experiments
+- Same bag replays identically every time
+
+Next: Day 10 - Playback rosbag, analyze latency
