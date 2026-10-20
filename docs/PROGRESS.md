@@ -240,3 +240,26 @@ Days 1-10 summary (225 min total):
 - Days 8-10: Motion control, rosbag recording, latency analysis
 
 Next: Biweekly Checkpoint 1 (Oct 26) - Real Unitree sensor validation
+
+## Week 3-4: Hardware Research + Checkpoint Prep
+
+### Day 11 (Tuesday, Oct 20)
+- [x] Analyzed URDF vs real Unitree Go2 quadruped hardware
+- [x] Base mass 10.0 kg matches real (within 20%)
+- [x] Thigh/calf proportions realistic (0.3m + 0.2m)
+- [x] Identified gap: hip range +/-0.5 rad vs real +/-0.8-1.0 rad
+
+Time: 60 minutes ✓
+
+URDF Validation:
+- Base mass: 10.0 kg (matches real, within 20%)
+- Leg masses: 1.0 kg thigh + 0.5 kg calf (accurate)
+- Thigh/calf proportions: 0.3m + 0.2m (realistic)
+- Hip range: +/-0.5 rad (real Go2: +/-0.8-1.0 rad) - 40-100% gap
+
+Assessment: URDF is GOOD baseline for simulation
+- Only significant gap: joint range limits
+- After CP1 real data: refine limits
+- Simulation ready for control algorithm testing
+
+Next: Day 12 - Sensor data format + checkpoint prep
