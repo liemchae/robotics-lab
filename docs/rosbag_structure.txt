@@ -1,0 +1,25 @@
+# Rosbag Structure Reference
+
+## Day 9 Recording (Simulation)
+Format: SQLite3 (.db3) + metadata.yaml
+Location: ~/ros2_ws_learning/day9_walk_motion_new/
+
+Files:
+  day9_walk_motion_new_0.db3  - message data
+  day9_walk_motion_new_1.db3  - overflow (if needed)
+  metadata.yaml               - topics, duration, message counts
+
+## Expected CP1 Recording (Real Hardware)
+Duration: 90 seconds (45s standing + 45s walking)
+Size: ~8 MB
+
+Topics:
+  /imu/data              sensor_msgs/msg/Imu           50 Hz  4500 msgs
+  /joint_states          sensor_msgs/msg/JointState    50 Hz  4500 msgs
+  /foot_force            geometry_msgs/msg/WrenchStamped 50 Hz 4500 msgs
+  /battery               sensor_msgs/msg/BatteryState  1 Hz   90 msgs
+
+## Commands
+Record:  ros2 bag record /imu/data /joint_states /foot_force /battery -o cp1_recording -d 90
+Info:    ros2 bag info cp1_recording
+Play:    ros2 bag play cp1_recording --loop

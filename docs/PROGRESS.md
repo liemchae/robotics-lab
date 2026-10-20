@@ -263,3 +263,19 @@ Assessment: URDF is GOOD baseline for simulation
 - Simulation ready for control algorithm testing
 
 Next: Day 12 - Sensor data format + checkpoint prep
+
+### Day 12 (Tuesday, Oct 20)
+- [x] Created SENSOR_EXPECTATIONS.md (real sensor ranges)
+- [x] Documented rosbag structure (SQLite3 + metadata.yaml)
+- [x] Created analyze_rosbag.py template for CP1 analysis
+- [x] Understood sensor message formats (IMU, JointState, foot force)
+
+Time: 60 minutes ✓
+
+Key Learnings:
+- 50 Hz for IMU, joint state, foot force; 1 Hz for battery
+- Quaternion orientation format for IMU
+- Rosbag = SQLite3 database with timestamped messages
+- CP1 plan: 45s standing + 45s walking, ~8 MB rosbag
+
+Next: Day 13 - Rosbag analysis tools
