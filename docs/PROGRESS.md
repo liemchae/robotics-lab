@@ -279,3 +279,20 @@ Key Learnings:
 - CP1 plan: 45s standing + 45s walking, ~8 MB rosbag
 
 Next: Day 13 - Rosbag analysis tools
+
+### Day 13 (Wednesday, Oct 21)
+- [x] Created SENSOR_EXAMPLES.md (real IMU/joint/force data examples)
+- [x] Created inspect_rosbag.py (metadata + file inspection tool)
+- [x] Practiced rosbag inspection workflow on Day 9 data
+- [x] Documented expected CP1 output (6750+ messages, 3 topics)
+
+Time: 60 minutes ✓
+
+Key Learnings:
+- Real IMU walking: pitch +/-3 deg, accel x +/-2.0 m/s^2
+- Joint state: 12 joints, stance vs swing phase patterns
+- Foot force: 0 (swing) to ~45N (stance) per foot
+- metadata.yaml = topic list, message counts, duration
+
+CP1 prep: 3/6 days complete
+Next: Day 14 - Gait stability theory
