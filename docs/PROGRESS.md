@@ -296,3 +296,22 @@ Key Learnings:
 
 CP1 prep: 3/6 days complete
 Next: Day 14 - Gait stability theory
+
+### Day 14 (Friday, Oct 23)
+- [x] Created GAIT_STABILITY.md (support polygon, SSM/DSM, frequency analysis)
+- [x] Created STABILITY_CHECKLIST.md (pre-lab, during, post-lab steps)
+- [x] Analyzed why 0.5 Hz is optimal for Go2 trotting
+- [x] Defined success criteria for CP1
+
+Time: 60 minutes ✓
+
+Key Learnings:
+- Support polygon: CoM must stay inside for stability
+- SSM minimum 0.05m, DSM threshold 1.0 rad/s
+- 0.5 Hz optimal: fast enough to walk, slow enough to control
+- Instability detection: angular velocity, force asymmetry, joint error
+
+CP1 prep: 4/6 days complete
+Next: Day 15 - Latency analysis prep
+Then: Day 16 - Safety review + dry run
+CP1: Oct 26 - Real Unitree recording
